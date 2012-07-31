@@ -9,21 +9,29 @@ public class GraphTools
     /**
      * Depth first search
      */
-    public static Node DFS(Node node, String target, Stack<String> path) {
+    public static Node DFS(Node node, String target, Stack<String> path)
+    {
         node.setVisited(true);
-        path.push( node.getCommit() );
-        if (target.equals(node.getCommit())) {
+        path.push(node.getCommit());
+        if (target.equals(node.getCommit()))
+        {
             return node;
-        } else {
+        }
+        else
+        {
             Node result = null;
-            for (Node child : node.getChildren()) {
-                if (!child.isVisited()) {
+            for (Node child : node.getChildren())
+            {
+                if (!child.isVisited())
+                {
                     result = DFS(child, target, path);
                 }
-                if ( result != null )
+                if (result != null)
                 {
                     break;
-                } else {
+                }
+                else
+                {
                     path.pop();
                 }
             }
@@ -31,7 +39,11 @@ public class GraphTools
         }
     }
 
-    public static Node BFS ( Node node, String target, Stack<String> path ) {
+    /**
+     * Breath First Search
+     */
+    public static Node BFS(Node node, String target, Stack<String> path)
+    {
         LinkedList<Node> queue = new LinkedList<Node>();
         queue.add(node);
         node.setVisited(true);
@@ -57,7 +69,7 @@ public class GraphTools
         return null;
     }
 
-     public static HashMap<String, Node> buildGraphWithChildren(String[] commits, String[][] children)
+    public static HashMap<String, Node> buildGraphWithChildren(String[] commits, String[][] children)
     {
         // build up a Graph, and keep a map that the key points to each node.
         HashMap<String, Node> aNodeMap = new HashMap<String, Node>();
@@ -70,7 +82,8 @@ public class GraphTools
             {
                 for (int j = 0; j < children[i].length; j++)
                 {
-                    Node child = ( aNodeMap.get(children[i][j]) == null )? new Node(children[i][j]) : aNodeMap.get( children[i][j]);
+                    Node child = (aNodeMap.get(children[i][j]) == null) ? new Node(children[i][j]) : aNodeMap.get(
+                            children[i][j]);
                     child.addParent(commit);
                     aNodeMap.put(child.getCommit(), child);
                     commit.addChild(child);
@@ -95,7 +108,8 @@ public class GraphTools
             {
                 for (int j = 0; j < parents[i].length; j++)
                 {
-                    Node parent = ( aNodeMap.get(parents[i][j]) == null )? new Node(parents[i][j]) : aNodeMap.get( parents[i][j]);
+                    Node parent = (aNodeMap.get(parents[i][j]) == null) ? new Node(parents[i][j]) : aNodeMap.get(
+                            parents[i][j]);
                     parent.addChild(commit);
                     aNodeMap.put(parent.getCommit(), parent);
                     commit.addParent(parent);
@@ -118,8 +132,8 @@ public class GraphTools
     public static String LCA(String[] path1, String[] path2)
     {
         String lca = null;
-        String[] smallestPath = ( path1.length > path2.length ) ? path2 : path1;
-        String[] largestPath = ( path1.length > path2.length ) ? path1 : path2;
+        String[] smallestPath = (path1.length > path2.length) ? path2 : path1;
+        String[] largestPath = (path1.length > path2.length) ? path1 : path2;
         for (int i = 0; i < smallestPath.length; i++)
         {
             if ((smallestPath[i].equals(largestPath[i])))
