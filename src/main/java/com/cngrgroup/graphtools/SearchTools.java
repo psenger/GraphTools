@@ -3,6 +3,13 @@ package com.cngrgroup.graphtools;
 import java.util.LinkedList;
 import java.util.Stack;
 
+/**
+ * SearchTools provides a set of search tools.
+ *
+ * @author Philip A Senger
+ * @version 1.0
+ * @since <pre>08/07/2012</pre>
+ */
 public class SearchTools
 {
     /**
@@ -79,7 +86,7 @@ public class SearchTools
     }
 
     /**
-     * Lowest Common Ansestor.
+     * Lowest Common Ancestor.
      *
      * @param path1
      * @param path2

@@ -3,6 +3,9 @@ package com.cngrgroup.graphtools;
 import java.util.Set;
 import java.util.HashSet;
 
+/**
+ * Data Transfer Object responsible for holding data and graph data.
+ */
 public class Node
 {
 

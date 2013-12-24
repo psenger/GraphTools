@@ -4,7 +4,13 @@ import java.util.HashMap;
 
 public class NonCycleGraphTools
 {
-
+    /**
+     * Build a graph with given children.
+     *
+     * @param commits
+     * @param children
+     * @return
+     */
     public static HashMap<String, Node> buildGraphWithChildren(String[] commits, String[][] children)
     {
         // build up a Graph, and keep a map that the key points to each node.
@@ -31,6 +37,13 @@ public class NonCycleGraphTools
         return aNodeMap;
     }
 
+    /**
+     * Build a graph with parents
+     *
+     * @param commits
+     * @param parents
+     * @return
+     */
     public static HashMap<String, Node> buildGraphWithParents(String[] commits, String[][] parents)
     {
         // build up a Graph, and keep a map that the key points to each node.
@@ -57,6 +70,11 @@ public class NonCycleGraphTools
         return aNodeMap;
     }
 
+    /**
+     * Reset the graph.
+     *
+     * @param map
+     */
     public static void resetVisited(HashMap<String, Node> map)
     {
         for (Node node : map.values())

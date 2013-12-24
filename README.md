@@ -1,4 +1,4 @@
 #GraphTools
 ![Build Status](https://travis-ci.org/psenger/GraphTools.png "Build Status" )
 
-A simple Java API related to Graphs. 
+This project is a simple Java API related to DFS abd BFS Graphs.
