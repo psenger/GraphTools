@@ -1,7 +1,5 @@
-*.class
-*.jar
-*.war
-*.ear
-*.ipr
-*.iml
-*.iws
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+release.properties
