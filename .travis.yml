@@ -2,10 +2,6 @@ language: java
 jdk:
   - openjdk7
   - openjdk6
-  - openjdk5
-  - openjdk4
   - oraclejdk7
   - oraclejdk6
-  - oraclejdk5
-  - oraclejdk4
 script: "mvn test"
